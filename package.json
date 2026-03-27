@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2"
+  },
+  "dependencies": {
+    "@react-google-maps/api": "^2.20.8",
+    "axios": "^1.13.6",
+    "lucide-react": "^1.7.0",
+    "react-router-dom": "^7.13.2"
+  }
+}
