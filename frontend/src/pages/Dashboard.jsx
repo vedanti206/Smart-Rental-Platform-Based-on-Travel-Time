@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import PropertyCard from '../components/PropertyCard';
 import { 
-  Building, LayoutDashboard, BarChart2, DollarSign, 
+  Building, LayoutDashboard, BarChart2, IndianRupee, 
   Settings, HelpCircle, LogOut, Plus, Search, Bell, X, Home 
 } from 'lucide-react';
 
@@ -85,7 +85,7 @@ const Dashboard = () => {
                 <BarChart2 className="h-5 w-5" /> <span>Analytics</span>
               </button>
               <button disabled className="w-full flex items-center space-x-4 px-4 py-3.5 text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-2xl font-semibold transition-all">
-                <DollarSign className="h-5 w-5" /> <span>Financial</span>
+                <IndianRupee className="h-5 w-5" /> <span>Financial</span>
               </button>
             </nav>
           </div>
@@ -167,6 +167,41 @@ const Dashboard = () => {
              <button className="flex items-center px-4 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-xl text-sm font-bold shadow-sm hover:bg-gray-50 transition-colors">
                <SlidersHorizontal className="h-4 w-4 mr-2" /> More Filters
              </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-center gap-2">
+               <div className="flex items-center space-x-3 text-gray-500 text-sm font-bold">
+                 <div className="bg-orange-100 p-2 rounded-lg"><IndianRupee className="h-4 w-4 text-orange-600"/></div>
+                 <span>Total Portfolio Value</span>
+               </div>
+               <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight">₹{totalValue.toLocaleString('en-IN')}</h3>
+               <p className="text-xs font-medium text-gray-400">Across {activeProperties} properties</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-center gap-2">
+               <div className="flex items-center space-x-3 text-gray-500 text-sm font-bold">
+                 <div className="bg-blue-100 p-2 rounded-lg"><Home className="h-4 w-4 text-blue-600"/></div>
+                 <span>Total Properties</span>
+               </div>
+               <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight">{activeProperties}</h3>
+               <p className="text-xs font-medium text-gray-400">Currently listed</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-center gap-2">
+               <div className="flex items-center space-x-3 text-gray-500 text-sm font-bold">
+                 <div className="bg-green-100 p-2 rounded-lg"><BarChart2 className="h-4 w-4 text-green-600"/></div>
+                 <span>Avg. Price per Property</span>
+               </div>
+               <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight">₹{(totalValue / activeProperties || 0).toLocaleString('en-IN')}</h3>
+               <p className="text-xs font-medium text-gray-400">Based on listed properties</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-center gap-2">
+               <div className="flex items-center space-x-3 text-gray-500 text-sm font-bold">
+                 <div className="bg-purple-100 p-2 rounded-lg"><LayoutDashboard className="h-4 w-4 text-purple-600"/></div>
+                 <span>Property Types</span>
+               </div>
+               <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight">5</h3>
+               <p className="text-xs font-medium text-gray-400">Different types available</p>
+            </div>
           </div>
 
           {properties.length === 0 ? (

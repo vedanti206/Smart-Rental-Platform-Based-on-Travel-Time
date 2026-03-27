@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MapView from '../components/MapView';
 import PropertyCard from '../components/PropertyCard';
-import { Search, SlidersHorizontal, Map } from 'lucide-react';
+import { Search, SlidersHorizontal, Map, IndianRupee } from 'lucide-react';
 
 const SearchResults = () => {
   const [properties, setProperties] = useState([]);

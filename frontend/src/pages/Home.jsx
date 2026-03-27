@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Clock, DollarSign, Star } from 'lucide-react';
+import { MapPin, Clock, IndianRupee, Star } from 'lucide-react';
 
 const Home = () => {
   return (
@@ -25,7 +25,7 @@ const Home = () => {
       <div className="mt-24 grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto pb-16">
         {[
           { icon: Clock, title: "Smart Commute", desc: "Predict travel time to work." },
-          { icon: DollarSign, title: "Cost Calculator", desc: "Estimate total rent + travel savings." },
+          { icon: IndianRupee, title: "Cost Calculator", desc: "Estimate total rent + travel savings." },
           { icon: Star, title: "Facility Score", desc: "0-10 score for nearby amenities." },
           { icon: MapPin, title: "Interactive Maps", desc: "View everything visually." },
         ].map((feature, idx) => (
